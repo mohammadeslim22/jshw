@@ -73,9 +73,17 @@ let ids = []
 let topping = []
 let batter = []
 hw.map(record => {
-    record.topping.map(top => topping.push(top))
-    record.topping.map(row => ids.push(row.id))
-    record.batters.batter.map(bat => batter.push(bat))
+    record.batters.batter.map(bat => {
+        batter.push(bat);
+        ids.push(bat.id)
+
+    })
+    record.topping.map(top => {
+        topping.push(top);
+        ids.push(top.id)
+
+    })
+
     sumPpu += record.ppu
 
 })
